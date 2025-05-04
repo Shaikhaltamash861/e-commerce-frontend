@@ -1,5 +1,4 @@
-import Header  from "@/components/molecules/Header";
-import Sidebar from "@/components/molecules/Sidebar";
+
 
 import { Outlet } from "react-router-dom";
 

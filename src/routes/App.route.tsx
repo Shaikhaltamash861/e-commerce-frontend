@@ -4,7 +4,7 @@ import MainLayout from "@/layouts/MainLayout";
 import Login from "@/pages/auth/Login";
 import Dashboard from "@/pages/Dashboard";
 import Products from "@/pages/Products";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function AppRoute() {
     return (
         <BrowserRouter>

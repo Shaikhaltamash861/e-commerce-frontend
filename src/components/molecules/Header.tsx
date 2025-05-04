@@ -1,8 +1,8 @@
 
-import { useState } from "react"
-import { Bell, Heart, Menu, Search, ShoppingCart, User } from "lucide-react"
 
-import { Badge } from "@/components/ui/badge"
+import { Bell, Heart, Menu, Search, ShoppingCart } from "lucide-react"
+
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -10,7 +10,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 // import { SidebarFilters } from "./sidebar-filters"
 
 export default function Header() {
-    const [cartCount, setCartCount] = useState(3)
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background">
