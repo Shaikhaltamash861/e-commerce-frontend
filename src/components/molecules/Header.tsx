@@ -1,20 +1,20 @@
 
 
-import { Badge, Bell, Heart, Menu, Search, ShoppingCart } from "lucide-react"
+import { Bell, Heart, Menu, Search, ShoppingCart } from "lucide-react"
 
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { useState } from "react"
-import { Avatar } from "../ui/avatar"
+// import { useState } from "react"
+// import { Avatar } from "../ui/avatar"
 import { ModeToggle } from "../ui/mode-togle"
 import { Link } from "react-router-dom"
 
 // import { SidebarFilters } from "./sidebar-filters"
 
 export default function Header() {
-    const [cartCount, setCartCount] = useState(0);
+    // const [cartCount, setCartCount] = useState(0);
 
     return (
         <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] max-w-6xl z-50 transition-all duration-300 rounded-4xl bg-white/60 backdrop-blur-md shadow-md border border-gray-200/60">

@@ -19,6 +19,7 @@ function Login() {
         await login(email, password);
         navigate("/");
       } catch (err) {
+        console.log(error)
         setError("Invalid credentials");
       }
     };

@@ -3,11 +3,11 @@ import {Link }from "react-router-dom"
 import { ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
+// import { Separator } from "@/components/ui/separator"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ProductCard } from "@/components/molecules/Productcard" 
-import Header from "@/components/molecules/Header"
+// import Header from "@/components/molecules/Header"
 import Footer from "@/components/molecules/Footer"
 
 function Dashboard() {
