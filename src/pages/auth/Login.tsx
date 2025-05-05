@@ -3,12 +3,24 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input"
 import { Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/context/auth/AuthContext";
+import { useNavigate } from "react-router-dom";
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
-
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
-        // Handle sign in logic here
+    const { login } = useAuth();
+    const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        await login(email, password);
+        navigate("/");
+      } catch (err) {
+        setError("Invalid credentials");
+      }
     };
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-50">
@@ -32,7 +44,7 @@ function Login() {
                                 Email
                             </label>
                         </div>
-                        <Input type="email" placeholder="Email" className="px-3 py-2" />
+                        <Input type="email" placeholder="Email" className="px-3 py-2" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
 
                     <div className="space-y-2">
@@ -42,7 +54,7 @@ function Login() {
                             </label>
                         </div>
                         <div className="relative">
-                            <Input type={showPassword ? "text" : "password"} placeholder="Password" />
+                            <Input type={showPassword ? "text" : "password"} placeholder="Password" value={password}  onChange={(e) => setPassword(e.target.value)}/>
                             <button
                                 type="button"
                                 className="absolute inset-y-0 right-0 flex items-center px-3"

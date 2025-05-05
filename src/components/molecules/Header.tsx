@@ -1,18 +1,23 @@
 
 
-import { Bell, Heart, Menu, Search, ShoppingCart } from "lucide-react"
+import { Badge, Bell, Heart, Menu, Search, ShoppingCart } from "lucide-react"
 
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { useState } from "react"
+import { Avatar } from "../ui/avatar"
+import { ModeToggle } from "../ui/mode-togle"
+import { Link } from "react-router-dom"
 
 // import { SidebarFilters } from "./sidebar-filters"
 
 export default function Header() {
+    const [cartCount, setCartCount] = useState(0);
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-background">
+        <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] max-w-6xl z-50 transition-all duration-300 rounded-4xl bg-white/60 backdrop-blur-md shadow-md border border-gray-200/60">
             {/* Top Bar */}
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
                 {/* Mobile Menu Trigger */}
@@ -31,7 +36,7 @@ export default function Header() {
                 </Sheet> 
 
                 {/* Logo */}
-                <ShoppingCart className="h-6 w-6 text-teal-600" />
+                {/* <ShoppingCart className="h-6 w-6 text-teal-600" /> */}
                 <span className="text-xl font-bold">PrimeLand</span>
 
                 {/* Search Bar - Desktop */}
@@ -59,14 +64,15 @@ export default function Header() {
                      <User className="h-5 w-5" />
                         <span className="sr-only">Account</span>
                     </Button> */}
-                    {/* <Button variant="ghost" size="icon" className="relative" asChild>
+                    <Link to="/cart">
+                    <Button variant="ghost" size="icon" className="cursor-pointer">
                     
-                        <ShoppingCart className="h-5 w-5" />
-                        {cartCount > 0 && (
-                            <Badge className="absolute -right-1 -top-1 h-5 w-5 rounded-full p-0 text-xs">{cartCount}</Badge>
-                        )}
-                        <span className="sr-only">Cart</span>
-                    </Button> */}
+                        <ShoppingCart />
+                    </Button>
+                    </Link>
+
+                        {/* <Avatar/> */}
+                    <ModeToggle/>
                 </div>
             </div>
 
